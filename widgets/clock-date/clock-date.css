@@ -1,0 +1,14 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#clock-date-widget {
+    width: 400px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
