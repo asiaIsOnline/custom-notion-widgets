@@ -62,16 +62,22 @@
             day.innerHTML = now.getDate()
             year.innerHTML = now.getFullYear()
 
+
             if(now.getHours() == 0) {
                 hour.innerHTML = 12;
             }
 
-            if(now.getHours() > 12) {
-                hour.innerHTML = now.getHours() - 12;
-                period.innerHTML = "PM"
-            } else {
+            if(now.getHours() < 12) {
                 period.innerHTML = "AM"
             }
+
+            if(now.getHours() >= 12) {
+                period.innerHTML = "PM"
+            }
+
+            if(now.getHours() > 12) {
+                hour.innerHTML = now.getHours() - 12;
+            } 
 
             if(now.getMinutes() < 10) {
                 minute.innerHTML = "0" + now.getMinutes();
