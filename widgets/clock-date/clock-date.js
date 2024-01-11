@@ -21,11 +21,16 @@ function updateClock() {
     if(now.getHours() == 0) {
         hour.innerHTML = 12;
     }
+
     if(now.getHours() > 12) {
         hour.innerHTML = now.getHours() - 12;
         period.innerHTML = "PM"
     } else {
         period.innerHTML = "AM"
+    }
+
+    if(now.getMinutes() < 10) {
+        minute.innerHTML = "0" + now.getMinutes();
     }
 }
 

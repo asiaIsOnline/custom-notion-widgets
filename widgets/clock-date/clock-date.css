@@ -14,11 +14,9 @@ body {
 
 #time-container {
     font-size: 24px;
-    text-align: center;
     font-weight: 600;
 }
 
 #date-container {
     font-size: 14px;
-    text-align: center;
 }
