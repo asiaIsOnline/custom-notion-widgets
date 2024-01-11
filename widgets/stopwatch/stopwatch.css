@@ -1,0 +1,26 @@
+#stopwatch-widget {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#time-container {
+    font-size: 24px;
+    text-align: center;
+}
+
+#milliseconds {
+    font-size: 14px;
+}
+
+#btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btn-container button {
+    width: 25%;
+    height: 32px;
+}
