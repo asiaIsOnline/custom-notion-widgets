@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Widget</title>
+    <link rel="stylesheet" href="../base.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1><span id="greeting">Hello</span>, Asia</h1>
+    <script>
+        let greeting = document.getElementById('greeting');
+        let now = new Date();
+
+        if(now.getHours() <= 2 && now.getHours() >= 0) {
+            greeting.innerHTML = "Late Night"
+        }
+
+        if(now.getHours() <= 5 && now.getHours() >= 3) {
+            greeting.innerHTML = "Early Morning"
+        }
+
+        if(now.getHours() <= 11 && now.getHours() >= 6) {
+            greeting.innerHTML = "Good Morning"
+        }
+
+        if(now.getHours() <= 16 && now.getHours >= 12) {
+            greeting.innerHTML = "Good Afternoon"
+        }
+
+        if(now.getHours() > 17) {
+            greeting.innerHTML = "Good Evening"
+        }
+    </script>
+</body>
+</html>
