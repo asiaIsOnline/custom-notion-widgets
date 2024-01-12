@@ -6,11 +6,16 @@
     <title>Greeting Widget</title>
     <link rel="stylesheet" href="../base.css">
     <style>
-
+        #greeting-container {
+            width: 100%;
+            height: 48px;
+        }
     </style>
 </head>
 <body>
-    <h1><span id="greeting">Hello</span>, Asia</h1>
+    <div id="greeting-container">
+        <h1><span id="greeting">Hello</span>, Asia</h1>
+    </div>
     <script>
         let greeting = document.getElementById('greeting');
         let now = new Date();
@@ -27,7 +32,7 @@
             greeting.innerHTML = "Good Morning"
         }
 
-        if(now.getHours() <= 16 && now.getHours >= 12) {
+        if(now.getHours() <= 16 && now.getHours() >= 12) {
             greeting.innerHTML = "Good Afternoon"
         }
 
