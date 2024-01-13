@@ -12,14 +12,35 @@
         }
     </style>
 </head>
-<body>
+<body onload="checkTime()">
     <div id="greeting-container">
         <h1><span id="greeting">Hello</span>, Asia</h1>
     </div>
     <script>
         let greeting = document.getElementById('greeting');
         let now = new Date();
+        let currentHour = now.getHours();
 
+        function displayGreeting(h) {
+            if (h <= 2 && h >= 0) {
+            greeting.innerHTML = "Late Night"
+            } else if (h <= 5 && h >= 3) {
+                greeting.innerHTML = "Early Morning"
+            } else if (h <= 11 && h >= 6) {
+                greeting.innerHTML = "Good Morning"
+            } else if (h <= 16 && h >= 12) {
+                greeting.innerHTML = "Good Afternoon"
+            } else {
+                greeting.innerHTML = "Good Evening"
+            }
+        }
+
+        function checkTime() {
+            displayGreeting();
+            window.setInterval("displayGreeting()", 60000)
+        }
+
+        /*
         if(now.getHours() <= 2 && now.getHours() >= 0) {
             greeting.innerHTML = "Late Night"
         }
@@ -39,6 +60,7 @@
         if(now.getHours() > 17) {
             greeting.innerHTML = "Good Evening"
         }
+        */
     </script>
 </body>
 </html>
