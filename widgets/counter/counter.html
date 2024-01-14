@@ -10,18 +10,18 @@
     <script src="./counter.js" defer></script>
 </head>
 <body>
-    <div id="counter-widget">
-        <div class="c_col gap_8">
-            <i class="fa-solid fa-dumbbell"></i>
-            <button class="btn" id="reset">Reset</button>
+    <div id="counter-widget" class="counter-widget">
+        <div class="icon-reset-container">
+            <i class="fa-solid fa-dumbbell fa-lg"></i>
+            <button class="r-btn btn" id="resetBtn">Reset</button>
         </div>
-        <div class="c_col">
-            <p class="current-amount">0</p>
-            <p class="counter-title">Counter Title</p>
+        <div class="amount-title-container">
+            <p id="currentAmount">0</p>
+            <p class="counterTitle">Mini Workout Counter</p>
         </div>
-        <div class="c-row gap_16">
-            <button class="s-btn xl-font">-</button>
-            <button class="s-btn xl-font">+</button>
+        <div class="add-minus-container">
+            <button id="decreaseBtn" class="s-btn btn xl-font">-</button>
+            <button id="increaseBtn" class="s-btn btn xl-font">+</button>
         </div>
     </div>
 </body>

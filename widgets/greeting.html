@@ -36,8 +36,8 @@
         }
 
         function checkTime() {
-            displayGreeting();
-            window.setInterval("displayGreeting()", 60000)
+            displayGreeting(currentHour);
+            window.setInterval("displayGreeting(currentHour)", 60000)
         }
 
         /*
