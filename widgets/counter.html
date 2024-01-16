@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Widget</title>
+    <link rel="stylesheet" href="../base.css">
+    <style>
+        .counter-widget {
+            width: 420px;
+            height: fit-content;
+            padding: 24px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .icon-reset-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .amount-title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .counter-title {
+            width: 120px;
+            text-align: center;
+        }
+
+        .add-minus-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn {
+            box-shadow: 4px 4px 8px rgba(68, 67, 67, 0.3);
+        }
+
+        .r-btn {
+            width: 64px;
+        }
+
+        .s-btn {
+            width: 32px;
+        }
+
+        .btn:hover {
+            box-shadow: 0px 0px;
+        }
+
+        .xl-font {
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a4b3c537be.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="counter-widget" class="counter-widget">
+        <div class="icon-reset-container">
+            <i class="fa-solid fa-dumbbell fa-lg"></i>
+            <button class="r-btn btn" id="resetBtn">Reset</button>
+        </div>
+        <div class="amount-title-container">
+            <p id="currentAmount">0</p>
+            <p class="counterTitle">Mini Workout Counter</p>
+        </div>
+        <div class="add-minus-container">
+            <button id="decreaseBtn" class="s-btn btn xl-font">-</button>
+            <button id="increaseBtn" class="s-btn btn xl-font">+</button>
+        </div>
+    </div>
+    <script>
+        const decreaseBtn = document.getElementById("decreaseBtn");
+        const increaseBtn = document.getElementById("increaseBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const currentAmount = document.getElementById("currentAmount");
+        let count = 0;
+
+        increaseBtn.onclick = function() {
+            count++
+            currentAmount.innerHTML = count;
+        }
+
+        decreaseBtn.onclick = function() {
+            count--;
+            currentAmount.innerHTML = count;
+        }
+
+        resetBtn.onclick = function() {
+            count = 0
+            currentAmount.innerHTML = count;
+        }
+    </script>
+</body>
+</html>
