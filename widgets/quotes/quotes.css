@@ -23,7 +23,12 @@
 }
 
 .quote-interaction-container {
-    margin-top: 8px;
+    margin-top: 16px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.new-quote-btn {
+    padding: 8px;
 }
