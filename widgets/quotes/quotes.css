@@ -1,5 +1,5 @@
 .quote-widget {
-    width: 100%;
+    width: 500px;
     height: fit-content;
     padding: 24px;
     display: flex;
@@ -8,12 +8,22 @@
 
 .side-line {
  width: 2px;   
- height: 64px;
+ height: 80px;
  background-color: black;
+}
+
+.quote-text {
+    width: 100%;
 }
 
 .quote {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
+}
+
+.quote-interaction-container {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
 }
