@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Widget</title>
+    <link rel="stylesheet" href="../base.css">
+    <style>
+        .quote-widget {
+            width: 500px;
+            height: fit-content;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+        }
+
+        .side-line {
+            width: 2px;   
+            height: 80px;
+            background-color: black;
+        }
+
+        .quote-text {
+            width: 100%;
+        }
+
+        .quote {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .quote-interaction-container {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .new-quote-btn {
+            padding: 8px;
+        }    
+    </style>
+</head>
+<body onload="randomQuote()">
+    <div class="quote-widget">
+        <div class="side-line"></div>
+        <div class="quote-text">
+            <p id="quote" class="quote">"Lorem ipsum dolor sit amet consectetur"</p>
+            <p>- <span id="author" class="author">Author Name</span></p>
+            <div class="quote-interaction-container">
+                <button id="newQuoteBtn" class="new-quote-btn">New Quote</button>
+                <div class="quote-type-dropdown">
+                    <label for="quote-type">Quote Type</label>
+                    <select id ="quote-type" name="quote-type">
+                        <option value="famous">Famous Quotes</option>
+                        <option value="motivation">Motivation</option>
+                        <option value="business-success">Business & Success</option>
+                        <option value="wisdom">Wisdom</option>
+                        <option value="technology">Technology</option>
+                        <option value="love-life-family">Love, Life & Family</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let quoteType = document.getElementById("quote-type");
+        let quote = document.getElementById("quote");
+        let author = document.getElementById("author");
+        let newQuoteBtn = document.getElementById("newQuoteBtn")
+        let api_url = "https://api.quotable.io/quotes/random?tags=famous-quotes";
+
+
+        // API url will be updated with corresponding tags
+        quoteType.onchange = () => {
+            console.log(quoteType.selectedIndex);
+            switch (quoteType.selectedIndex) {
+                case 1:
+                    // 121 total
+                    api_url = "https://api.quotable.io/quotes/random?tags=motivational|inspirational"
+                    console.log(api_url)
+                    randomQuote();
+                    break;
+                case 2:
+                    // 113 total
+                    api_url = "https://api.quotable.io/quotes/random?tags=business|success"
+                    console.log(api_url)
+                    randomQuote();
+                    break;
+                case 3:
+                    // 557 total
+                    api_url = "https://api.quotable.io/quotes/random?tags=wisdom|truth"
+                    console.log(api_url)
+                    randomQuote();
+                    break;
+                case 4:
+                    // 50 total
+                    api_url = "https://api.quotable.io/quotes/random?tags=technology"
+                    console.log(api_url)
+                    randomQuote();
+                    break;
+                case 5: 
+                    // 64 total
+                    api_url = "https://api.quotable.io/quotes/random?tags=life|love|family"
+                    console.log(api_url)
+                    randomQuote();
+                    break;
+            }
+        }
+
+
+        function randomQuote() {
+            fetch(api_url).then(res => res.json()).then(result =>{
+                console.log(result)
+                quote.innerHTML = result[0].content;
+                author.innerHTML = result[0].author;
+            })
+        }
+
+        newQuoteBtn.onclick = () => {
+            randomQuote()
+        }
+    </script>
+</body>
+</html>
