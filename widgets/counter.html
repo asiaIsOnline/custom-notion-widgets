@@ -84,21 +84,23 @@
         const increaseBtn = document.getElementById("increaseBtn");
         const resetBtn = document.getElementById("resetBtn");
         const currentAmount = document.getElementById("currentAmount");
-        let count = 0;
+        let count = JSON.parse(localStorage.getItem('count')) || 0;
+        currentAmount.innerHTML = count;
 
         increaseBtn.onclick = function() {
             count++
-            currentAmount.innerHTML = count;
+            localStorage.setItem("count", JSON.stringify(count))
+            currentAmount.innerHTML = localStorage.getItem("count");
         }
 
         decreaseBtn.onclick = function() {
-            count--;
-            currentAmount.innerHTML = count;
+            JSON.parse(localStorage.getItem("count")) - 1;
+            currentAmount.innerHTML = JSON.parse(localStorage.getItem("count"));
         }
 
         resetBtn.onclick = function() {
-            count = 0
-            currentAmount.innerHTML = count;
+            JSON.parse(localStorage.getItem("count")) = 0
+            currentAmount.innerHTML = JSON.parse(localStorage.getItem("count"));
         }
     </script>
 </body>
